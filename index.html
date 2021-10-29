@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>API TEST SITE</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="mt-5">
+            <div class="post-creation-section">
+              <div class="row">
+                  <div class="col-md-6">
+                    <h3 class="my-5">Today is API</h3>
+                      <form action="" id="post_form">
+                          <div class="mb-3">
+                              <label for="exampleFormControlInput1" 
+                              class="form-label">Post Title</label>
+                              <input type="text" class="form-control" 
+                              placeholder="Input a Title" id="post-title">
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" 
+                            class="form-label">Post Body</label>
+                            <textarea class="form-control" id="post-body" cols="30" rows="10"></textarea>                     
+                           </div>
+                           <div class="d-flex justify-content-end pb-3">
+                               <button class="btn btn-primary " type="submit" >Post</button>
+                           </div>
+                      </form>
+                  </div>
+              </div>   
+            </div>
+            <div class="post-display-section">
+                <div class="mt-5">
+                    <div class="h3 my-3">All Posts</div>
+                    <div class="post-box">
+                        <div class="row" id="post-layout">
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <h5 id="numb_post">Number 1</h5>
+                                            <h5 class="post-title mb-4" id="title_post">Capsom Soliam</h5>
+                                        </div>
+                                        <p class="post-body" id="body_post">Lorem ipsum dolor sit, amet consectetur 
+                                            adipisicing elit. Nemo consectetur vero, 
+                                            nostrum distinctio fugiat neque sit. Earum 
+                                            cumque odit, harum maxime, quis similique 
+                                            ad ullam voluptates perferendis quidem iste
+                                             dolorem!</p>
+                                    </div>
+                                    <div>
+                                        <button type="submit" class="btn btn-info text-center">Read More</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+    <script src="./js/post.js"></script>
+    <script src="./js/extend.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+</body>
+</html>
