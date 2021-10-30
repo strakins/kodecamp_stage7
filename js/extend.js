@@ -38,7 +38,7 @@
 //     })
 // }
 
-// getPosts();
+// getPosts ();
 
 
 
@@ -58,9 +58,9 @@
 //     const emailPara = document.querySelector('.emailPara');
 //     const messagePara = document.querySelector('.messagePara');
 
-//     localStorage.setItem('postid', JSON.stringify(currentNum));
-//     localStorage.setItem('posttopic', JSON.stringify(currentTitle));
-//     localStorage.setItem('postBody', JSON.stringify(currentBody));
+//     localStorage.setItem('postid', (currentNum));
+//     localStorage.setItem('posttopic', (currentTitle));
+//     localStorage.setItem('postBody', (currentBody));
     
 //     console.log(currentNum, currentTitle, currentBody);
 

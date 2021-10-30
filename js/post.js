@@ -12,7 +12,7 @@ function getPosts() {
     .then((data) => {
         // console.log(data)
         let postLayout = document.getElementById('post-layout')
-        // userPost = data
+        
         let contents = "";
         data.forEach(e => {
             // console.log(element)
@@ -28,7 +28,7 @@ function getPosts() {
                         <p class="post-body">${e.body}</p>
                     </div>
                     <div class="text-center py-2">
-                        <button type="submit" id="click" onclick="page(${e.id})" class="btn btn-primary">Read More</button>
+                        <button type="submit" id="click" onclick="page(${e.id})" class="btn btn-danger"> Read More</button>
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@ function page(id) {
             // console.log(element)
             contents = `
             <div class="p-5">
-                <div class="card bg-secondary" onclick="page()">
+                <div class="card bg-dark" onclick="page()">
                     <div class="card-body">
                         <div class="d-flex justify-content-end">
                         <h5 class="mx-2 text-white">${e.id}</h5>
@@ -92,7 +92,7 @@ function page(id) {
                         <p class="post-body text-white">${e.body}</p>
                     </div>
                     <div class="text-center py-2">
-                        <a href="index.html"><button type="submit" class="btn btn-primary text-white text-center"> > All Posts</button></a>
+                        <a href="index.html"><button type="submit" class="btn btn-danger text-white text-center"> > All Posts</button></a>
                     </div>
                 </div>
             </div>
