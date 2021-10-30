@@ -1,43 +1,44 @@
-function page() {
-    window.location.assign("post.html")  
+
+
+// function page() {
+//     window.location.assign("post.html")  
     
-}
+// }
 
-
-function getPosts() {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(response => response.json())
-    .then((data) => {
-        console.log(data)
-        let postLayout = document.getElementById('post_page')
-        // userPost = data
-        let contents = "";
-        data.forEach(e => {
-            // console.log(element)
-            contents = `
-            <div class=" mb-3">
+// function getPosts() {
+//     fetch('https://jsonplaceholder.typicode.com/posts')
+//     .then(response => response.json())
+//     .then((data) => {
+//         console.log(data)
+//         let postLayout = document.getElementById('post_page')
+//         // userPost = data
+//         let contents = "";
+//         data.forEach(e => {
+//             // console.log(element)
+//             contents = `
+//             <div class=" mb-3">
                 
-                    <div class="card-body">
-                        <div class="d-flex justify-content-end">
-                        <h5 class="mx-2 text-danger">${e.id}</h5>
-                        </div>
+//                     <div class="card-body">
+//                         <div class="d-flex justify-content-end">
+//                         <h5 class="mx-2 text-danger">${e.id}</h5>
+//                         </div>
 
-                        <h5 class="post-title mb-4 text-primary">${e.title}</h5>
-                        <p class="post-body text-primary">${e.body}</p>
-                    </div>
-                    <div class="text-center">
-                <a href="index.html"><button class="btn btn-info text-center">Home</button></a>
-                </div>
+//                         <h5 class="post-title mb-4 text-primary">${e.title}</h5>
+//                         <p class="post-body text-primary">${e.body}</p>
+//                     </div>
+//                     <div class="text-center">
+//                 <a href="index.html"><button class="btn btn-info text-center">Home</button></a>
+//                 </div>
                
-            </div>
-            `
-            postLayout.innerHTML =  contents
+//             </div>
+//             `
+//             postLayout.innerHTML =  contents
 
-        });
-    })
-}
+//         });
+//     })
+// }
 
-getPosts();
+// getPosts();
 
 
 
