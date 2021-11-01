@@ -1,4 +1,44 @@
 
+function getItem(id) {
+    let local_data = JSON.parse(localStorage.getItem("data"))
+
+    let copied_data = local_data.find(function(ele) {
+        return ele.id === id
+    })
+
+    return copied_data
+}
+
+
+function singlePost() {
+    const selectId = parseInt(new URLSearchParams(window.location.search).get('id'));
+    console.log("selectId:", selectId)
+    let item = getItem(selectId)
+
+    document.querySelector(".numb_post").textContent = item.id;
+    document.querySelector(".post-title").textContent = item.title;
+    document.querySelector(".post-body").textContent = item.body
+
+}
+
+singlePost()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function page() {
 //     window.location.assign("post.html")  
@@ -60,7 +100,7 @@
 
 //     localStorage.setItem('postid', (currentNum));
 //     localStorage.setItem('posttopic', (currentTitle));
-//     localStorage.setItem('postBody', (currentBody));
+//     localStorage.setItem('postBody',  (currentBody));
     
 //     console.log(currentNum, currentTitle, currentBody);
 

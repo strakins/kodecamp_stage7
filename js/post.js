@@ -6,14 +6,21 @@
 
 // postForm.addEventListener('submit', createPost)
 
-function getPosts() {
+
+let postLayout = document.getElementById('post-layout')
+console.log(postLayout)
+
+
+function allPosts() {
     fetch('https://jsonplaceholder.typicode.com/posts')
     .then(response => response.json())
     .then((data) => {
         // console.log(data)
-        let postLayout = document.getElementById('post-layout')
+        
         
         let contents = "";
+
+        localStorage.setItem("data", JSON.stringify(data))
         data.forEach(e => {
             // console.log(element)
             contents += `
@@ -28,7 +35,7 @@ function getPosts() {
                         <p class="post-body">${e.body}</p>
                     </div>
                     <div class="text-center py-2">
-                        <button type="submit" id="click" onclick="page(${e.id})" class="btn btn-danger"> Read More</button>
+                        <button id="click" onclick="pagePost(event)" class="btn btn-danger" data-id=${e.id}> Read More</button>
                     </div>
                 </div>
             </div>
@@ -39,7 +46,13 @@ function getPosts() {
     })
 }
 
-getPosts();
+allPosts();
+
+
+function pagePost(e) {
+    let dataId = e.target.getAttribute("data-id")
+    window.location = `./post.html?id=${dataId}`
+}
 
 // function createPost(e) {
 //     e.preventDefault();
@@ -65,43 +78,43 @@ getPosts();
 // }
 
 
-function page(id) {
-    localStorage.setItem("postid", id);
+// function page(id) {
+//     localStorage.setItem("postid", id);
     
-    postId = localStorage.getItem("postid");
-    console.log(postId);
+//     postId = localStorage.getItem("postid");
+//     console.log(postId);
 
-    fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-    .then(response => response.json())
-    .then((e) => {
-        // console.log(data)
-        let postLayout = document.getElementById('post-layout')
-        // userPost = data
-        let contents = "";
-        // data.forEach(e => {
-            // console.log(element)
-            contents = `
-            <div class="p-5">
-                <div class="card bg-dark" onclick="page()">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-end">
-                        <h5 class="mx-2 text-white">${e.id}</h5>
-                        </div>
+//     fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+//     .then(response => response.json())
+//     .then((e) => {
+//         // console.log(data)
+//         let postLayout = document.getElementById('post-layout')
+//         // userPost = data
+//         let contents = "";
+//         // data.forEach(e => {
+//             // console.log(element)
+//             contents = `
+//             <div class="p-5">
+//                 <div class="card bg-dark" onclick="page()">
+//                     <div class="card-body">
+//                         <div class="d-flex justify-content-end">
+//                         <h5 class="mx-2 text-white">${e.id}</h5>
+//                         </div>
 
-                        <h5 class="post-title mb-4 text-white">${e.title}</h5>
-                        <p class="post-body text-white">${e.body}</p>
-                    </div>
-                    <div class="text-center py-2">
-                        <a href="index.html"><button type="submit" class="btn btn-danger text-white text-center"> > All Posts</button></a>
-                    </div>
-                </div>
-            </div>
-            `
-            postLayout.innerHTML =  contents
+//                         <h5 class="post-title mb-4 text-white">${e.title}</h5>
+//                         <p class="post-body text-white">${e.body}</p>
+//                     </div>
+//                     <div class="text-center py-2">
+//                         <a href="index.html"><button type="submit" class="btn btn-danger text-white text-center"> > All Posts</button></a>
+//                     </div>
+//                 </div>
+//             </div>
+//             `
+//             postLayout.innerHTML =  contents
            
 
-        });
-    // })
+//         });
+//     // })
     
-}
+// }
 
