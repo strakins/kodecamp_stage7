@@ -26,7 +26,7 @@ function allPosts() {
             contents += `
             <div class="col-md-4 mb-3">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body" style="height: 300px;">
                         <div class="d-flex justify-content-end">
                         <h5 class="mx-2 text-danger">${e.id}</h5>
                         </div>
